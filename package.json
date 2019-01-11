@@ -1,5 +1,5 @@
 {
-  "name": "tictactoe",
+  "name": "tic-tac-toe",
   "version": "0.0.1",
   "description": "An in-browser Tic-Tac-Toe game",
   "author": "Michael Hewson <michael@michaelhewson.ca>",
