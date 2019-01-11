@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "rootDir": "src",
+    "lib": ["esnext", "dom"],
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin",
+      }
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+}
+

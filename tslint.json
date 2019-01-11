@@ -1,0 +1,8 @@
+{
+    "extends": "tslint:recommended",
+    "rules": {
+        "quotemark": false,
+        "no-switch-case-fall-through": true,
+        "interface-over-type-literal": false
+    }
+}

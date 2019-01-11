@@ -1,0 +1,20 @@
+{
+  "name": "tictactoe",
+  "version": "0.0.1",
+  "description": "An in-browser Tic-Tac-Toe game",
+  "author": "Michael Hewson <michael@michaelhewson.ca>",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.2",
+    "typescript-tslint-plugin": "^0.2.1",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
