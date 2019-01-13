@@ -1,6 +1,7 @@
 import {Game} from './game';
 
 const canvas = document.querySelector("#game-canvas")! as HTMLCanvasElement;
-const game = new Game(canvas);
+const statusDiv = document.querySelector("#game-status")! as HTMLDivElement;
+const game = new Game(canvas, statusDiv);
 
-game.drawGrid();
+game.render();

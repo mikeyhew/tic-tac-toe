@@ -15,10 +15,30 @@ export class Ui {
         return context;
     }
 
+    public mouseClickLocation(x: number, y: number): {row: number, col: number} | null {
+        console.log(`mouseClickLocation(x=${x}, y=${y})`);
+        for (let row = 0; row < 3; row++) {
+            for (let col = 0; col < 3; col++) {
+                const left = this.borderThickness() + col * (this.borderThickness() + this.cellWidth());
+                const right = (1 + col) * (this.borderThickness() + this.cellWidth());
+                const top = this.borderThickness() + row * (this.borderThickness() + this.cellHeight());
+                const bottom = (1 + row) * (this.borderThickness() + this.cellHeight());
+
+                if (x > left && x < right && y > top && y < bottom) {
+                    return {row, col};
+                }
+            }
+        }
+
+        return null;
+    }
+
 
     public drawGrid(grid: Grid) {
-        console.log(`drawGrid(), canvasHeight()=${this.canvasHeight()}, borderThickness()=${this.borderThickness()}, canvasWidth=${this.canvasWidth()}, cellHeight()=${this.cellHeight()}, cellWidth()=${this.cellWidth()}`);
-        console.log(`clientHeight=${this.canvas.clientHeight}, clientWidth=${this.canvas.clientWidth}`);
+        // console.log(`drawGrid(), canvasHeight()=${this.canvasHeight()}, borderThickness()=${this.borderThickness()}, canvasWidth=${this.canvasWidth()}, cellHeight()=${this.cellHeight()}, cellWidth()=${this.cellWidth()}`);
+        // console.log(`clientHeight=${this.canvas.clientHeight}, clientWidth=${this.canvas.clientWidth}`);
+
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.drawBorders();
 
@@ -61,6 +81,8 @@ export class Ui {
     }
 
     private drawBorders() {
+        this.context.beginPath();
+
         const top = 0;
         const bottom = this.borderThickness() + (this.cellHeight() + this.borderThickness()) * 3;
 
@@ -102,7 +124,9 @@ export class Ui {
         const cellBottom = cellTop + this.cellWidth();
         const cellRight  = cellLeft + this.cellWidth();
 
-        console.log(`drawCellValue(${row}, ${col}), top=${cellTop}, bottom=${cellBottom}, left=${cellLeft}, right=${cellRight}`);
+        // console.log(`drawCellValue(${row}, ${col}), top=${cellTop}, bottom=${cellBottom}, left=${cellLeft}, right=${cellRight}`);
+
+        this.context.beginPath();
 
         switch (player) {
             case Player.X:
